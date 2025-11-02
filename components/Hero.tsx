@@ -1,5 +1,6 @@
+"use client";
 import { ArrowRight, CheckCircle, Users, Award, Zap } from "lucide-react";
-import { Button } from "./ui/Button";
+import { Button } from "@/components/ui/button";
 export default function HeroSection() {
   const features = [
     {
@@ -27,6 +28,9 @@ export default function HeroSection() {
       description: "Support dan pengerjaan cepat",
     },
   ];
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <section className="relative z-10 min-h-screen flex items-center justify-center px-4 py-20 pt-24 md:pt-32">
       <div className="container mx-auto text-center">
@@ -45,14 +49,17 @@ export default function HeroSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              size="md"
-              className="bg-linear-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-8 py-6 text-lg shadow-lg shadow-purple-500/50"
+              size="lg"
+              className="bg-linear-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white px-8 py-6 text-lg shadow-lg shadow-purple-500/50 group"
             >
-              Lihat Layanan <ArrowRight className="ml-2" />
+              Lihat Layanan{" "}
+              <ArrowRight className="size-6 group-hover:translate-x-1 transition transform duration-150" />
             </Button>
             <Button
-              size="md"
-              className="border-white/20 hover:bg-white/10 px-8 py-6 text-lg"
+              size="lg"
+              variant="outline"
+              className="glass hover:glass-strong transition-all duration-300 text-base px-8 py-6 border-2"
+              onClick={() => scrollToSection("contact")}
             >
               Hubungi Kami
             </Button>

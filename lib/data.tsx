@@ -1,50 +1,25 @@
-import { ReactNode } from "react";
+export const footerLinks = {
+  services: [
+    { label: "Academic Services", href: "#services" },
+    { label: "Web Development", href: "#services" },
+    { label: "Mobile Apps", href: "#services" },
+    { label: "UI/UX Design", href: "#services" },
+  ],
+  company: [
+    { label: "About Us", href: "#" },
+    { label: "Our Team", href: "#" },
+    { label: "Careers", href: "#" },
+    { label: "Blog", href: "#" },
+  ],
+  support: [
+    { label: "Contact", href: "#contact" },
+    { label: "FAQ", href: "#" },
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms of Service", href: "#" },
+  ],
+};
 
-// Tipe untuk Media
-interface MediaItem {
-  url: string;
-  name: string;
-}
-
-// Tipe untuk Services
-interface ServiceItem {
-  icon: ReactNode;
-  title: string;
-  description: string;
-}
-
-// Tipe untuk Features
-interface FeatureItem {
-  icon: ReactNode;
-  title: string;
-  stat: string;
-  description: string;
-}
-
-// Tipe untuk Portfolio
-interface PortfolioItem {
-  title: string;
-  category: string;
-  image: string;
-}
-
-// Tipe untuk Testimonials
-interface TestimonialItem {
-  name: string;
-  role: string;
-  content: string;
-  rating: number;
-}
-
-// Data dengan tipe TypeScript
-export const media = [
-  {
-    url: "",
-    name: "instagram",
-  },
-];
-
-export const portfolio: PortfolioItem[] = [
+export const portfolio = [
   {
     title: "E-Commerce Platform",
     category: "Web Development",
@@ -71,7 +46,7 @@ export const portfolio: PortfolioItem[] = [
   },
 ];
 
-export const testimonials: TestimonialItem[] = [
+export const testimonials = [
   {
     name: "Siti Nurhaliza",
     role: "Mahasiswa",

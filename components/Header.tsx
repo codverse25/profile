@@ -2,9 +2,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { scrollToElement } from "@/lib/utils";
-import { Button } from "./ui/Button";
 import { Menu, X, ArrowRight } from "lucide-react";
-
+import { Button } from "@/components/ui/button";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const links = [
@@ -72,7 +71,10 @@ export default function Header() {
                   </li>
                 ))}
                 <li>
-                  <Button className="group" size="sm">
+                  <Button
+                    className="group"
+                    onClick={() => handleLinkClick("contact")}
+                  >
                     Contact{" "}
                     <ArrowRight className="size-6 group-hover:translate-x-1 transition transform duration-150" />
                   </Button>
