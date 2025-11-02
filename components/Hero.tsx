@@ -1,6 +1,6 @@
 "use client";
 import { ArrowRight, CheckCircle, Users, Award, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 export default function HeroSection() {
   const features = [
     {

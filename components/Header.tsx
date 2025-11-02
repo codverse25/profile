@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { scrollToElement } from "@/lib/utils";
 import { Menu, X, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const links = [
