@@ -27,7 +27,7 @@ export default function TestimonialSection() {
                 ))}
               </div>
               <p className="text-gray-300 mb-6 italic">
-                "{testimonial.content}"
+                &quot;{testimonial.content}&quot;
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-linear-to-r from-purple-500 to-cyan-500 flex items-center justify-center font-bold text-lg">

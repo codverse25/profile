@@ -31,7 +31,7 @@ export default function Footer() {
                   aria-label={social.label}
                   className="glass p-3 rounded-xl hover:glass-strong hover:glow-primary transition-all duration-300 group"
                 >
-                  <div className="text-muted-foreground group-hover:text-primary transition-colors">
+                  <div className="text-muted-foreground group-hover:text-white transition-colors">
                     {social.icon}
                   </div>
                 </a>
@@ -45,7 +45,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -61,7 +61,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>
@@ -77,7 +77,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-white transition-colors"
                   >
                     {link.label}
                   </a>

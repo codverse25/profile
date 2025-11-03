@@ -54,4 +54,11 @@ export const testimonials = [
       "Sangat membantu dalam menyelesaikan tugas akhir saya. Hasilnya memuaskan dan tepat waktu!",
     rating: 4,
   },
+  {
+    name: "Anonymous",
+    role: "Mahasiswa",
+    content:
+      "pelayanan gercep dan pengerjaan tugas satset aman, cepat dan amanah",
+    rating: 5,
+  },
 ];

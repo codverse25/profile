@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import StructuredData from "@/components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Codverse - Digital Solutions Provider",
@@ -22,7 +12,35 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Codverse - Digital Solutions Provider",
     description: "Solusi digital terpadu untuk semua kebutuhan teknologi Anda",
+    url: "https://codverse.site",
+    siteName: "Codverse",
+    images: [
+      {
+        url: "https://codverse.site/image-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Codverse Preview",
+      },
+    ],
+    locale: "id_ID",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Codverse - Digital Solutions Provider",
+    description: "Solusi digital terpadu untuk website, mobile app, dan desain",
+    images: ["https://codverse.site/image-og.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -33,9 +51,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
+        <StructuredData />
         {children}
       </body>
     </html>
