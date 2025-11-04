@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Jasa digital terpadu: tugas akademik, development project, desain grafis, dan jasa teknologi lainnya. Solusi profesional untuk kebutuhan digital Anda.",
   keywords:
-    "jasa pembuatan website, mobile app development, UI/UX design, graphic design, jasa tugas akademik, jasa skripsi, konsultan teknologi",
+    "jasa pembuatan website, mobile app development, UI/UX design, graphic design, jasa tugas akademik, jasa skripsi, konsultan teknologi, jasa tugas madura",
   authors: [{ name: "Codverse" }],
   openGraph: {
     title: "Codverse - Digital Solutions Provider",

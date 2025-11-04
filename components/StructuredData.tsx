@@ -60,7 +60,8 @@ export default function StructuredData() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+62-800-000-0000",
+      postalCode: "69315",
+      telephone: "+62-823-3273-2484",
       contactType: "Customer Service",
       areaServed: "ID",
       availableLanguage: ["Indonesian", "English"],

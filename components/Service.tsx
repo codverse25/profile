@@ -2,9 +2,9 @@ import {
   GraduationCap,
   Code,
   Smartphone,
-  Palette,
   PenTool,
   Lightbulb,
+  ChartNoAxesCombined,
 } from "lucide-react";
 export default function ServiceSection() {
   const services = [
@@ -27,10 +27,10 @@ export default function ServiceSection() {
         "Aplikasi mobile iOS & Android yang user-friendly dengan performa optimal.",
     },
     {
-      icon: <Palette className="w-10 h-10" />,
-      title: "UI/UX Design",
+      icon: <ChartNoAxesCombined className="w-10 h-10" />,
+      title: "Data Analytics",
       description:
-        "Desain interface yang menarik dan pengalaman pengguna yang intuitif.",
+        "Analisis data mendalam untuk pengambilan keputusan bisnis yang lebih baik.",
     },
     {
       icon: <PenTool className="w-10 h-10" />,

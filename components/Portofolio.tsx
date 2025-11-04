@@ -1,4 +1,5 @@
 import { portfolio } from "@/lib/data";
+import Image from "next/image";
 export default function PortofolioSection() {
   return (
     <section id="portfolio" className="relative z-10 py-20 px-4">
@@ -18,9 +19,10 @@ export default function PortofolioSection() {
               className="glass-card rounded-2xl overflow-hidden backdrop-blur-lg bg-white/5 border border-white/10 hover:scale-105 transition-all group"
             >
               <div className="relative overflow-hidden h-64">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
+                  fill
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-transparent to-transparent" />

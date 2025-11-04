@@ -52,6 +52,7 @@ export default function Header() {
                 <button
                   onClick={toggleMenu}
                   className="bg-primary rounded p-1.5"
+                  aria-label="Toggle menu"
                 >
                   <Menu className="size-5" />
                 </button>

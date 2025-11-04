@@ -27,9 +27,10 @@ export default function Pages() {
       <ContactSection />
       <Footer />
       <a
-        href="https://wa.me/62811111111"
+        href="https://wa.me/6282332732484?text=Halo%20Codverse%2C%20saya%20ingin%20menghubungi%20Anda%20untuk%20diskusi%20lebih%20lanjut."
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="button for whatsapp"
         className="fixed bottom-8 right-8 z-50 w-16 h-16 bg-linear-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-2xl shadow-green-500/50 hover:scale-110 transition-transform"
       >
         <MessageSquare className="w-8 h-8 text-white" />
