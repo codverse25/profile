@@ -22,11 +22,11 @@ export default function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null);
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
+
     if (
       !formData.name.trim() ||
       !formData.email.trim() ||
@@ -34,11 +34,12 @@ export default function ContactSection() {
     ) {
       setSubmitStatus({
         type: "error",
-        message: "Semua bidang harus diisi.",
+        message: "Semua field harus diisi.",
       });
       setIsSubmitting(false);
       return;
     }
+
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       setSubmitStatus({
         type: "error",
@@ -47,17 +48,39 @@ export default function ContactSection() {
       setIsSubmitting(false);
       return;
     }
-    setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitStatus({
-        type: "success",
-        message: "Message sent successfully! We'll get back to you soon.",
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-      setFormData({ name: "", email: "", message: "" });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message: "Pesan berhasil dikirim! Kami akan segera menghubungi Anda.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: result.error || "Gagal mengirim pesan. Silakan coba lagi.",
+        });
+      }
+    } catch (error) {
+      console.error("Submit error:", error);
+      setSubmitStatus({
+        type: "error",
+        message: "Terjadi kesalahan. Silakan coba lagi nanti.",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
   return (
     <section id="contact" className="relative z-10 py-20 px-4">
@@ -105,7 +128,7 @@ export default function ContactSection() {
                   setFormData({ ...formData, message: e.target.value })
                 }
                 required
-                rows={5}
+                rows={10}
                 className="bg-white/5 border-white/10 text-white placeholder:text-gray-500 focus:border-purple-500"
               />
             </div>
@@ -144,7 +167,7 @@ export default function ContactSection() {
             <div className="flex flex-col items-center">
               <Phone className="w-8 h-8 text-purple-400 mb-2" />
               <div className="text-sm text-gray-400">Phone</div>
-              <div className="font-semibold">+000</div>
+              <div className="font-semibold">+6282332732484</div>
             </div>
             <div className="flex flex-col items-center">
               <MapPin className="w-8 h-8 text-purple-400 mb-2" />

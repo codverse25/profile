@@ -44,10 +44,13 @@ export default function Header() {
             {/* Mobile Hamburger Button */}
             <div className="block md:hidden">
               {isMenuOpen ? (
-                <X
-                  className="size-6 text-white cursor-pointer"
+                <button
                   onClick={toggleMenu}
-                />
+                  className="bg-primary rounded p-1.5"
+                  aria-label=" Close Toggle menu"
+                >
+                  <X className="size-5 cursor-pointer" />
+                </button>
               ) : (
                 <button
                   onClick={toggleMenu}
