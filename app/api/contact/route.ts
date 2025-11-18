@@ -27,7 +27,7 @@ export async function POST(request: Request) {
             <p style="margin: 10px 0;"><strong>Pesan:</strong></p>
             <p style="margin: 10px 0; white-space: pre-wrap;">${message}</p>
           </div>
-          <p style="color: #666; font-size: 12px;">Email ini dikirim dari contact form website Anda.</p>
+          <p style="color: #666; font-size: 12px;">Email ini dikirim dari contact form <a href="https://codverse.site">CodVerse Company</a></p>
         </div>
       `,
     });
