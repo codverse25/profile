@@ -1,10 +1,55 @@
+"use client";
 import { testimonials } from "@/lib/data";
 import { Star } from "lucide-react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 export default function TestimonialSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(titleRef.current, {
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 80%",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+
+      cardsRef.current.forEach((card, index) => {
+        if (!card) return;
+
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+          },
+          x: index % 2 === 0 ? -100 : 100,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power3.out",
+        });
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="testimonials" className="relative z-10 py-20 px-4">
+    <section
+      ref={sectionRef}
+      id="testimonials"
+      className="relative z-10 py-20 px-4"
+    >
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <div ref={titleRef} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
             Kata Mereka
           </h2>
@@ -16,6 +61,9 @@ export default function TestimonialSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
+              ref={(el) => {
+                cardsRef.current[index] = el;
+              }}
               className="glass-card p-8 rounded-2xl backdrop-blur-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-all"
             >
               <div className="flex mb-4">

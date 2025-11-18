@@ -6,7 +6,7 @@ import PortofolioSection from "@/components/Portofolio";
 import ServiceSection from "@/components/Service";
 import TestimonialSection from "@/components/Testimonial";
 import WhySection from "@/components/Why";
-import { MessageSquare } from "lucide-react";
+import Image from "next/image";
 
 export default function Pages() {
   return (
@@ -33,7 +33,13 @@ export default function Pages() {
         aria-label="button for whatsapp"
         className="fixed bottom-8 right-8 z-50 w-16 h-16 bg-linear-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-2xl shadow-green-500/50 hover:scale-110 transition-transform"
       >
-        <MessageSquare className="w-8 h-8 text-white" />
+        <Image
+          width={35}
+          height={35}
+          src="/assert/whatsapp.svg"
+          alt="whatsapp"
+          className="w-8 h-8 text-white"
+        />
       </a>
     </div>
   );

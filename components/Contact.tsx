@@ -87,7 +87,7 @@ export default function ContactSection() {
       <div className="container mx-auto max-w-4xl">
         <div className="glass-card p-12 rounded-3xl backdrop-blur-lg bg-white/5 border border-white/10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent py-2">
               Hubungi Kami
             </h2>
             <p className="text-xl text-gray-400">
