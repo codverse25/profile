@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "Contact Form <hello@codverse.site>",
+      from: "Contact Form <hello@send.codverse.site>",
       to: ["info@codverse.site"],
       replyTo: email,
       subject: `Pesan Baru dari ${name}`,
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
     if (error) {
       console.error("Resend error:", error);
       return NextResponse.json(
-        { error: "Gagal mengirim email" },
+        { error: "Gagal mengirim Pesan" },
         { status: 500 }
       );
     }
@@ -44,7 +44,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Server error:", error);
     return NextResponse.json(
-      { error: "Terjadi kesalahan server" },
+      { error: "Terjadi kesalahan pada server" },
       { status: 500 }
     );
   }
